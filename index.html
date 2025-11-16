@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section id="board">
+            <div id="description">
+                <h1>Task Board</h1>
+                <p>double click on board = create card</p>
+                <p>double click on card = delete card</p>
+            </div>
+
+            <div id="colors">
+                <p>change card color</p>
+                <div class="color" onclick="changeColor('rgb(73, 134, 184)')"
+                    style="background-color: rgb(73, 134, 184);"></div>
+                <div class="color" onclick="changeColor('rgb(214, 56, 56)')"
+                    style="background-color: rgb(214, 56, 56);"></div>
+                <div class="color" onclick="changeColor('rgb(236, 236, 58)')"
+                    style="background-color: rgb(236, 236, 58);"></div>
+                <div class="color" onclick="changeColor('rgb(28, 202, 72)')"
+                    style="background-color: rgb(28, 202, 72);"></div>
+                <div class="color" onclick="changeColor('rgb(178, 59, 233)')"
+                    style="background-color: rgb(178, 59, 233);"></div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="script.js"></script>
+
+</html>

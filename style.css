@@ -1,0 +1,99 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --bgBoard: #1a1a1a;
+    --title: #dadada;
+    --describe: #757575;
+}
+
+main {
+    background-color: var(--bgBoard);
+    width: 100%;
+    height: 100dvh;
+}
+
+#board {
+    background-image: repeating-linear-gradient(90deg, hsla(15, 0%, 62%, 0.05) 0px, hsla(15, 0%, 62%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0deg, hsla(15, 0%, 62%, 0.05) 0px, hsla(15, 0%, 62%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0deg, hsla(15, 0%, 62%, 0.07) 0px, hsla(15, 0%, 62%, 0.07) 1px, transparent 1px, transparent 52px), repeating-linear-gradient(90deg, hsla(15, 0%, 62%, 0.07) 0px, hsla(15, 0%, 62%, 0.07) 1px, transparent 1px, transparent 52px), linear-gradient(0deg, rgb(20, 20, 20), rgb(20, 20, 20));
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 20px;
+
+    #description {
+        position: absolute;
+        user-select: none;
+        z-index: 1000000;
+        top: 10px;
+        left: 10px;
+
+        h1 {
+            color: var(--title);
+        }
+
+        p {
+            color: var(--describe);
+            font-size: 12px;
+        }
+    }
+
+    #colors {
+        width: auto;
+        height: auto;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        p {
+            color: var(--describe);
+            font-size: 12px;
+            position: absolute;
+            right: 0px;
+            top: -20px;
+            user-select: none;
+        }
+
+        .color {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .color:hover {
+            scale: 1.1;
+        }
+
+        .color:active {
+            opacity: 0.5;
+        }
+
+    }
+
+    .card {
+        min-width: 100px;
+        min-height: 100px;
+        border-radius: 5px;
+        padding: 10px;
+        position: absolute;
+        cursor: grab;
+        color: white;
+        box-shadow: 0px 0px 3px var(--bgBoard);
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .drag-card {
+        opacity: 0.3;
+        cursor: grabbing;
+
+    }
+}
