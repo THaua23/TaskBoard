@@ -69,6 +69,3 @@ board.addEventListener('drop', (event) => {
 function changeColor(color) {
     cardColor = color
 }
-
-
-//TODO Fazer modo mobile 
