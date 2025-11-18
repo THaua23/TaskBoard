@@ -1,5 +1,5 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'jetBrains Mono';
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
@@ -25,6 +25,7 @@ main {
     position: relative;
     padding: 20px;
 
+    /* descrição das funcionalidades da página */
     #description {
         position: absolute;
         user-select: none;
@@ -42,6 +43,7 @@ main {
         }
     }
 
+    /* Card de cores */
     #colors {
         width: auto;
         height: auto;
@@ -52,6 +54,7 @@ main {
         align-items: center;
         justify-content: center;
         gap: 10px;
+        z-index: 1000000;
 
         p {
             color: var(--describe);
@@ -77,16 +80,18 @@ main {
             opacity: 0.5;
         }
 
-        input[type="color"]::-webkit-color-swatch-wrapper {
-            padding: 0;
-        }
+        input[type="color"] {
+            &::-webkit-color-swatch-wrapper {
+                padding: 0;
+            }
 
-        input[type="color"]::-webkit-color-swatch {
-            border: none;
+            &::-webkit-color-swatch {
+                border: none;
+            }
         }
 
         /*Icone de picker*/
-        svg{
+        svg {
             position: absolute;
             width: 15px;
             height: 15px;
@@ -98,9 +103,43 @@ main {
 
     }
 
+    /* modal de delete */
+
+    .modal {
+        background-color: #1a1a1a;
+        width: 240px;
+        height: 80px;
+        padding: 10px;
+        font-size: 12px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        border-radius: 5px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        z-index: 8000000;
+
+        .btn-box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                width: 40%;
+                text-align: center;
+            }
+        }
+    }
+
+    /* card editável */
     .card {
         min-width: 100px;
         min-height: 100px;
+        max-width: 400px;
         border-radius: 5px;
         padding: 10px;
         position: absolute;

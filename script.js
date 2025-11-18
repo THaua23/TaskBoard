@@ -5,6 +5,8 @@ const board = document.getElementById('board')
 let dragCard
 let mouseX, mouseY
 
+let zIndex = 0
+
 let cardColor = 'rgb(73, 134, 184)'// cor padrão do card (pode ser alterada)
 
 
@@ -14,6 +16,7 @@ let cardColor = 'rgb(73, 134, 184)'// cor padrão do card (pode ser alterada)
 board.addEventListener('dblclick', (event) => {
     // só cria o card se o alvo do clique for o próprio board
     if (event.target === board) {
+        zIndex++
         let card = document.createElement('div')
         card.classList.add('card')
         card.style.backgroundColor = cardColor
@@ -22,6 +25,7 @@ board.addEventListener('dblclick', (event) => {
         card.style.position = 'absolute'
         card.style.top = mouseY + 'px'
         card.style.left = mouseX + 'px'
+        card.style.zIndex = zIndex + 1
 
         // evento de arrastar o card
         card.addEventListener('dragstart', (event) => {
@@ -32,8 +36,35 @@ board.addEventListener('dblclick', (event) => {
 
         // remover card com duplo clique
         card.addEventListener('dblclick', () => {
-            card.remove()
+            // cria o modal
+            let modal = document.createElement('div')
+            modal.classList.add('modal')
+            modal.innerText = 'Do you want to delete the card?'
+
+            let btnBox = document.createElement('div')
+            btnBox.classList.add('btn-box')
+
+            let no = document.createElement('button')
+            no.innerText = 'No'
+            let yes = document.createElement('button')
+            yes.innerText = 'Yes'
+
+            btnBox.append(no)
+            btnBox.append(yes)
+            modal.append(btnBox)
+            board.append(modal)
+
+            // sistema do modal de delete
+            no.addEventListener('click', () => {
+                modal.remove()
+            })
+
+            yes.addEventListener('click', () => {
+                modal.remove()
+                card.remove()
+            })
         })
+
 
         board.append(card)
     }
@@ -55,12 +86,14 @@ board.addEventListener('dragover', (event) => {
 board.addEventListener('drop', (event) => {
     event.preventDefault() // sempre necessário
     if (dragCard) {
+        zIndex++
         // pega a posição do mouse no momento do drop
         const x = event.clientX - 50
         const y = event.clientY - 50
         dragCard.style.top = y + 'px'
         dragCard.style.left = x + 'px'
         dragCard.classList.remove('drag-card')
+        dragCard.style.zIndex = zIndex
     }
 })
 

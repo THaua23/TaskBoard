@@ -6,22 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Board</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <main>
         <section id="board">
+            <!-- Descrição da página -->
             <div id="description">
                 <h1>Task Board</h1>
                 <p>double click on board = create card</p>
                 <p>double click on card = delete card</p>
             </div>
+            
+            </div>
 
+            <!-- Card de cores (seletor) -->
             <div id="colors">
                 <p>change card color</p>
                 <div class="color" onclick="changeColor('rgb(73, 134, 184)')"
                     style="background-color: rgb(73, 134, 184);"></div>
-                <div class="color" onclick="changeColor('rgb(214, 56, 56)')"()
+                <div class="color" onclick="changeColor('rgb(214, 56, 56)')"
                     style="background-color: rgb(214, 56, 56);"></div>
                 <div class="color" onclick="changeColor('rgb(236, 236, 58)')"
                     style="background-color: rgb(236, 236, 58);"></div>
@@ -31,8 +40,8 @@
                     style="background-color: rgb(180, 81, 226);"></div>
 
                 <input type="color" class="color" onchange="changeColor(this.value)">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512">
+                <!-- Icone de picker -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path fill="#ffffff"
                         d="M341.6 29.2l-101.6 101.6-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4 101.6-101.6c39-39 39-102.2 0-141.1s-102.2-39-141.1 0zM55.4 323.3c-15 15-23.4 35.4-23.4 56.6l0 42.4-26.6 39.9c-8.5 12.7-6.8 29.6 4 40.4s27.7 12.5 40.4 4l39.9-26.6 42.4 0c21.2 0 41.6-8.4 56.6-23.4l109.4-109.4-45.3-45.3-109.4 109.4c-3 3-7.1 4.7-11.3 4.7l-36.1 0 0-36.1c0-4.2 1.7-8.3 4.7-11.3l109.4-109.4-45.3-45.3-109.4 109.4z" />
                 </svg>
