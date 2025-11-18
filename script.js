@@ -9,6 +9,8 @@ let zIndex = 0
 
 let cardColor = 'rgb(73, 134, 184)'// cor padrão do card (pode ser alterada)
 
+const trash = document.querySelector('.trash-can')
+
 
 //*-------------functions-------------
 
@@ -22,50 +24,20 @@ board.addEventListener('dblclick', (event) => {
         card.style.backgroundColor = cardColor
         card.draggable = true
         card.contentEditable = true
-        card.style.position = 'absolute'
         card.style.top = mouseY + 'px'
         card.style.left = mouseX + 'px'
-        card.style.zIndex = zIndex + 1
+        card.style.zIndex = zIndex
 
         // evento de arrastar o card
         card.addEventListener('dragstart', (event) => {
             dragCard = event.target
             dragCard.classList.add('drag-card')
             event.dataTransfer.effectAllowed = 'move'
+
+            trash.classList.add('show-trash-can')
         })
 
-        // remover card com duplo clique
-        card.addEventListener('dblclick', () => {
-            // cria o modal
-            let modal = document.createElement('div')
-            modal.classList.add('modal')
-            modal.innerText = 'Do you want to delete the card?'
-
-            let btnBox = document.createElement('div')
-            btnBox.classList.add('btn-box')
-
-            let no = document.createElement('button')
-            no.innerText = 'No'
-            let yes = document.createElement('button')
-            yes.innerText = 'Yes'
-
-            btnBox.append(no)
-            btnBox.append(yes)
-            modal.append(btnBox)
-            board.append(modal)
-
-            // sistema do modal de delete
-            no.addEventListener('click', () => {
-                modal.remove()
-            })
-
-            yes.addEventListener('click', () => {
-                modal.remove()
-                card.remove()
-            })
-        })
-
-
+        //adciona o card no quadro
         board.append(card)
     }
 })
@@ -94,6 +66,8 @@ board.addEventListener('drop', (event) => {
         dragCard.style.left = x + 'px'
         dragCard.classList.remove('drag-card')
         dragCard.style.zIndex = zIndex
+
+        trash.classList.remove('show-trash-can')
     }
 })
 
@@ -102,3 +76,7 @@ board.addEventListener('drop', (event) => {
 function changeColor(color) {
     cardColor = color
 }
+
+trash.addEventListener('drop', () => {
+    dragCard.remove()
+})

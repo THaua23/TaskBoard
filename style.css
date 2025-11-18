@@ -61,7 +61,7 @@ main {
             font-size: 12px;
             position: absolute;
             right: 0px;
-            top: -20px;
+            top: -23px;
             user-select: none;
         }
 
@@ -103,36 +103,20 @@ main {
 
     }
 
-    /* modal de delete */
+    /* delete */
 
-    .modal {
-        background-color: #1a1a1a;
-        width: 240px;
-        height: 80px;
-        padding: 10px;
-        font-size: 12px;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        color: white;
-        border-radius: 5px;
+    .trash-can {
         position: absolute;
+        width: 40px;
+        height: 40px;
         top: 10px;
         right: 10px;
+        display: none;
+        z-index: 1000000;
+    }
+
+    .show-trash-can {
         display: flex;
-        z-index: 8000000;
-
-        .btn-box {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            button {
-                width: 40%;
-                text-align: center;
-            }
-        }
     }
 
     /* card editável */
