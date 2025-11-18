@@ -25,11 +25,11 @@ main {
     position: relative;
     padding: 20px;
 
-    /* descrição das funcionalidades da página */
+    /** ---------descrição das funcionalidades da página--------- */
     #description {
         position: absolute;
         user-select: none;
-        z-index: 1000000;
+        z-index: 10000;
         top: 10px;
         left: 10px;
 
@@ -43,7 +43,7 @@ main {
         }
     }
 
-    /* Card de cores */
+    /** ---------Card de cores--------- */
     #colors {
         width: auto;
         height: auto;
@@ -54,7 +54,7 @@ main {
         align-items: center;
         justify-content: center;
         gap: 10px;
-        z-index: 1000000;
+        z-index: 10001;
 
         p {
             color: var(--describe);
@@ -103,7 +103,7 @@ main {
 
     }
 
-    /* delete */
+    /** ---------delete--------- */
 
     .trash-can {
         position: absolute;
@@ -112,14 +112,14 @@ main {
         top: 10px;
         right: 10px;
         display: none;
-        z-index: 1000000;
+        z-index: 10002;
     }
 
     .show-trash-can {
         display: flex;
     }
 
-    /* card editável */
+    /** ---------card editável--------- */
     .card {
         min-width: 100px;
         min-height: 100px;
@@ -138,5 +138,25 @@ main {
         opacity: 0.3;
         cursor: grabbing;
 
+    }
+}
+
+/** ---------Mobile--------- */
+
+@media (max-width: 768px) {
+    #board{
+        #description{
+            h1{font-size: 24px;}
+            p{font-size: 10px;}
+        }
+
+        #colors{
+        p{font-size: 10px;}
+        }
+
+        .trash-can{
+            top: calc(100% - 50px);
+            left: 10px;
+        }
     }
 }

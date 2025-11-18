@@ -1,8 +1,8 @@
 //*-------------Variables-------------
 
-const board = document.getElementById('board')
+const board = document.getElementById('board')// quadro principal
 
-let dragCard
+let dragCard // recebe o card arrastado
 let mouseX, mouseY
 
 let zIndex = 0
@@ -11,10 +11,9 @@ let cardColor = 'rgb(73, 134, 184)'// cor padrão do card (pode ser alterada)
 
 const trash = document.querySelector('.trash-can')
 
-
 //*-------------functions-------------
 
-//cria o card
+// cria o card
 board.addEventListener('dblclick', (event) => {
     // só cria o card se o alvo do clique for o próprio board
     if (event.target === board) {
@@ -43,7 +42,7 @@ board.addEventListener('dblclick', (event) => {
 })
 
 
-//captura a posição do mouse
+// captura a posição do mouse
 board.addEventListener('mousemove', (event) => {
     mouseX = event.clientX - 50
     mouseY = event.clientY - 50
@@ -72,11 +71,15 @@ board.addEventListener('drop', (event) => {
 })
 
 // altera a cor do card
-
 function changeColor(color) {
     cardColor = color
 }
 
+// apagar card ao dropá-lo na lixeira
 trash.addEventListener('drop', () => {
+    let soundTrash = document.getElementById('sound-trash')
+    soundTrash.volume = 0.05
+    soundTrash.playbackRate = 1.5 //velocidade da música
+    soundTrash.play()
     dragCard.remove()
 })
