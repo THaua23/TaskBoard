@@ -119,6 +119,10 @@ main {
         display: flex;
     }
 
+    .animate-trash{
+        animation: trash 0.5s ease-in infinite;
+    }
+
     /** ---------card editável--------- */
     .card {
         min-width: 100px;
@@ -140,6 +144,15 @@ main {
 
     }
 }
+
+@keyframes trash {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-10deg); }
+  50%  { transform: rotate(10deg); }
+  75%  { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
 
 /** ---------Mobile--------- */
 

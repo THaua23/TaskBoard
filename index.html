@@ -16,7 +16,7 @@
 <body>
     <main>
         <section id="board">
-            <!-- Descrição da página -->
+            <!--* ---------Descrição da página--------- -->
             <div id="description">
                 <h1>Task Board</h1>
                 <p>double click on board = create card</p>
@@ -24,7 +24,8 @@
             </div>
 
             <audio src="throwing-rubbish-in-the-trash.mp3" id="sound-trash"></audio>
-
+            
+            <!--* ---------Icone da lixeira--------- -->
             <svg xmlns="http://www.w3.org/2000/svg" class="trash-can" viewBox="0 0 448 512">
                 <path fill="rgb(214, 56, 56)"
                     d="M136.7 5.9C141.1-7.2 153.3-16 167.1-16l113.9 0c13.8 0 26 8.8 30.4 21.9L320 32 416 32c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 96C14.3 96 0 81.7 0 64S14.3 32 32 32l96 0 8.7-26.1zM32 144l384 0 0 304c0 35.3-28.7 64-64 64L96 512c-35.3 0-64-28.7-64-64l0-304zm88 64c-13.3 0-24 10.7-24 24l0 192c0 13.3 10.7 24 24 24s24-10.7 24-24l0-192c0-13.3-10.7-24-24-24zm104 0c-13.3 0-24 10.7-24 24l0 192c0 13.3 10.7 24 24 24s24-10.7 24-24l0-192c0-13.3-10.7-24-24-24zm104 0c-13.3 0-24 10.7-24 24l0 192c0 13.3 10.7 24 24 24s24-10.7 24-24l0-192c0-13.3-10.7-24-24-24z" />
@@ -32,7 +33,7 @@
 
             </div>
 
-            <!-- Card de cores (seletor) -->
+            <!--* ---------Card de cores (seletor)--------- -->
             <div id="colors">
                 <p>change card color</p>
                 <div class="color" onclick="changeColor('rgb(73, 134, 184)')"
@@ -47,7 +48,8 @@
                     style="background-color: rgb(180, 81, 226);"></div>
 
                 <input type="color" class="color" onchange="changeColor(this.value)" onclick="changeColor(this.value)">
-                <!-- Icone de picker -->
+                
+                <!--* --------- Icone de picker--------- -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path fill="#ffffff"
                         d="M341.6 29.2l-101.6 101.6-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4 101.6-101.6c39-39 39-102.2 0-141.1s-102.2-39-141.1 0zM55.4 323.3c-15 15-23.4 35.4-23.4 56.6l0 42.4-26.6 39.9c-8.5 12.7-6.8 29.6 4 40.4s27.7 12.5 40.4 4l39.9-26.6 42.4 0c21.2 0 41.6-8.4 56.6-23.4l109.4-109.4-45.3-45.3-109.4 109.4c-3 3-7.1 4.7-11.3 4.7l-36.1 0 0-36.1c0-4.2 1.7-8.3 4.7-11.3l109.4-109.4-45.3-45.3-109.4 109.4z" />
